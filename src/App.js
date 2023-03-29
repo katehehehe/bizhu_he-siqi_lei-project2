@@ -10,7 +10,7 @@ import HardMode from './HardMode';
 function App() {
   return (
     <div>
-      <BrowserRouter basename = "/bizhu_he-siqi_lei_project2">
+      <BrowserRouter basename = "/bizhu_he-siqi_lei-project2">
         <Routes>
         <Route path="/" element={<DefualtMode />} />
           <Route path="/hardMode" element={<HardMode />} />
