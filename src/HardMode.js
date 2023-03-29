@@ -80,7 +80,7 @@ function HardMode() {
         letterPosition: 0,
       });
     } else {
-      setHardModalOpen({ isOpen: true, message: "Not a word. Please try again." });
+      setHardModalOpen({ isOpen: true, message: "Not in the current word dictionary. Please try again." });
     }
     if (wordGuess === correctWord) {
       setGameEnd({ gameOver: true, playerWon: true });

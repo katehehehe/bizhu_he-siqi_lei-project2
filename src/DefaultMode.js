@@ -87,7 +87,7 @@ function DefualtMode() {
         letterPosition: 0,
       });
     } else {
-      setModalOpen({ isOpen: true, message: "Not a word. Please try again." });
+      setModalOpen({ isOpen: true, message: "Not in the current word dictionary. Please try again." });
     }
     if (wordGuess === correctWord) {
       setGameEnd({ gameOver: true, playerWon: true });
