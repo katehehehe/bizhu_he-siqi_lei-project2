@@ -1,4 +1,6 @@
-This game is available here https://bz-sq-wordle.netlify.app/
+# Live Demo 
+
+Try the game out online [Play me] (https://bz-sq-wordle.netlify.app/)
 
 # Getting Started with Create React App
 
