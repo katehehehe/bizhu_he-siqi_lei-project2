@@ -1,4 +1,5 @@
 import "./App.css";
+import './index.css';
 import React, { useState, useEffect, createContext } from "react";
 import { GameBoardTemplate } from "./data/GameBoardTemplate";
 import GameBoard from "./components/grid/GameBoard";

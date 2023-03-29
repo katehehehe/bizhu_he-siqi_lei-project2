@@ -1,4 +1,5 @@
 import "./App.css";
+import './index.css';
 import React, { useState, useEffect, createContext } from "react";
 import GameBoard from "./components/grid/GameBoard";
 import Footer from "./components/pageSections/Footer";
