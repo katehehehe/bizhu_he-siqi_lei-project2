@@ -1,25 +1,21 @@
+
 import React from "react";
 import Row from "./Row";
 
-const GameBoard = () => {
+const GameBoard = ({ isHard }) => {
+  const numRowValues = isHard ? 5 : 6;
+  const rowValues = Array.from({ length: numRowValues }, (_, i) => i);
+
   return (
-    // use several rows to form a board
-    <div className = "game-board">
-
-
-    <div className="board">
-      <Row rowValue={0} />
-      <Row rowValue={1} />
-      <Row rowValue={2} />
-      <Row rowValue={3} />
-      <Row rowValue={4} />
-      <Row rowValue={5} />
+    <div className="game-board">
+      <div className="board">
+        {rowValues.map((rowValue, index) => (
+          <Row key={index} rowValue={rowValue} isHard={isHard} />
+        ))}
+      </div>
     </div>
-    </div>
-    
   );
 };
 
-
-
 export default GameBoard;
+

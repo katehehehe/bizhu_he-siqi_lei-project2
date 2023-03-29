@@ -1,20 +1,21 @@
 import React from "react";
-import Letter from "./Letter.jsx";
+import { Letter, HardLetter } from "./Letter";
 
-// this is the normal row, and each comprised 6 letters
-const Row = ({ rowValue }) => {
+const Row = ({ rowValue, isHard }) => {
+  const LetterComponent = isHard ? HardLetter : Letter;
+  const letterPositions = isHard ? [0, 1, 2, 3, 4, 5, 6] : [0, 1, 2, 3, 4, 5];
+
   return (
     <div className="row">
-      <Letter letterPosition={0} value={rowValue} />
-      <Letter letterPosition={1} value={rowValue} />
-      <Letter letterPosition={2} value={rowValue} />
-      <Letter letterPosition={3} value={rowValue} />
-      <Letter letterPosition={4} value={rowValue} />
-      <Letter letterPosition={5} value={rowValue} />
+      {letterPositions.map((letterPosition) => (
+        <LetterComponent
+          key={letterPosition}
+          letterPosition={letterPosition}
+          value={rowValue}
+        />
+      ))}
     </div>
   );
 };
-
-
 
 export default Row;

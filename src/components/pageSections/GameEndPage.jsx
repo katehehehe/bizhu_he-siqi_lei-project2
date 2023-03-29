@@ -1,17 +1,21 @@
-import React, { useContext } from 'react'
-import { AppContext } from "../../App";
-function GameEndPage() {
+
+
+import React, { useContext } from 'react';
+import { AppContext } from "../../DefaultMode";
+import { HardAppContext } from "../../HardMode";
+
+function GameEndPage({ context }) {
 
     // when the whole trial finished, generate a new game
     const startNewGame = () => {
         window.location.reload(true);
     };
     const { correctWord, cursorPos, gameEnd } =
-        useContext(AppContext);
+        useContext(context);
     return (
-        < div className="game-end-container">
+        <div className="game-end-container">
             <h3 className="game-end-header">
-             {gameEnd.playerWon ? "Congratulations, You Win!" : "Game Over!"}
+                {gameEnd.playerWon ? "Congratulations, You Win!" : "Game Over!"}
             </h3>
             <hr />
             <p className="modal-para">
@@ -37,4 +41,14 @@ function GameEndPage() {
     );
 }
 
-export default GameEndPage
+function GameEndPageWrapper(props) {
+    if (props.context === AppContext) {
+        return <GameEndPage context={AppContext} />;
+    } else if (props.context === HardAppContext) {
+        return <GameEndPage context={HardAppContext} />;
+    } else {
+        throw new Error("Invalid context");
+    }
+}
+
+export default GameEndPageWrapper;

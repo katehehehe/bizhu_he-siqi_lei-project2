@@ -1,16 +1,15 @@
-import React, { useContext } from "react";
-import { AppContext } from "../../App";
-import correct from "../../assets/correct.webp";
-import partialCorrect from "../../assets/partialCorrect.webp";
-import incorrect from "../../assets/incorrect.webp";
+import React, { useContext, createContext } from "react";
+import { AppContext } from "../../DefaultMode";
+import word from "../../assets/word.webp";
 
+export const RuleContext = createContext();
 
 const RulesPage = () => {
 
   const { setNewGame } = useContext(AppContext);
 
   return  (
-    <div className="rule-container click-rule-container">
+    <div className="rule-container">
       <div >
         <button className = "close-button"   
         onClick={() => {setNewGame(false);}}
@@ -30,29 +29,19 @@ const RulesPage = () => {
 
     <img
       className="rules-img"
-      src={correct}
+      src={word}
       alt=""
     />
-    <p className="paragraph-margin">
-      <span className="bold-small-font">W</span> is in the word and
+     <p className="small-para-margin">
+      <span className="bold-small-para">V</span> is in the word and
       in the correct spot.
     </p>
-    <img
-      className="rules-img"
-      src={partialCorrect}
-      alt=""
-    />
     <p className="small-para-margin">
-      <span className="bold-small-para">I</span> is in the word but
+      <span className="bold-small-para">E, U</span> are in the word but
       is in the wrong spot.
     </p>
-    <img
-      className="rules-img"
-      src={incorrect}
-      alt=""
-    />
     <p className="small-para-margin">
-      <span className="bold-small-para">U</span> is not in the word
+      <span className="bold-small-para">L, I, A</span> are not in the word
       in any spot.
     </p>
     <hr />
