@@ -1,5 +1,5 @@
 {
-  "homepage": "http://localhost:3000",
+  "homepage": "http:/bizhuhe.github.io/bizhu_he-siqi_lei_project2",
   "name": "wordle",
   "version": "0.1.0",
   "private": true,
@@ -18,11 +18,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
+ 
   },
   "eslintConfig": {
     "extends": [
