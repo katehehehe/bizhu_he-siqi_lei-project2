@@ -1,6 +1,6 @@
 # Live Demo 
 
-Try the game out online [Play me] (https://bz-sq-wordle.netlify.app/)
+Try the game out online [Play me](https://bz-sq-wordle.netlify.app/)
 
 # Getting Started with Create React App
 
